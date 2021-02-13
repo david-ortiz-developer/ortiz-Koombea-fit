@@ -17,6 +17,7 @@ class PhotosCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var picturesStack: UIStackView!
     @IBOutlet weak var mainImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     var index = -1
     var clickCallBack: ((Int) -> Void)?
     @IBOutlet weak var tinyGelleryHeigth: NSLayoutConstraint!
@@ -36,5 +37,13 @@ class PhotosCell: UICollectionViewCell {
     }
     func showTinyGallerie() {
         self.tinyGelleryHeigth.constant = 154
+    }
+    override func prepareForReuse() {
+        self.scrollView.contentSize = CGSize.zero
+        self.picturesStack.frame = CGRect.zero
+            for view in self.picturesStack.subviews {
+                self.picturesStack.removeArrangedSubview(view)
+                view.removeFromSuperview()
+        }
     }
 }

@@ -56,17 +56,30 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdL-hK-kL8">
                                                             <rect key="frame" x="8" y="336" width="300" height="154"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleAspectFit" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-zm-2jU">
+                                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0E-2s-G0y">
                                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="154"/>
-                                                                </stackView>
+                                                                    <subviews>
+                                                                        <stackView opaque="NO" contentMode="scaleAspectFit" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-zm-2jU">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="154"/>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="LOF-zm-2jU" firstAttribute="height" secondItem="x0E-2s-G0y" secondAttribute="height" id="T0u-kA-ktq"/>
+                                                                        <constraint firstItem="LOF-zm-2jU" firstAttribute="centerY" secondItem="x0E-2s-G0y" secondAttribute="centerY" id="fCl-iP-u5E"/>
+                                                                        <constraint firstItem="LOF-zm-2jU" firstAttribute="width" secondItem="x0E-2s-G0y" secondAttribute="width" id="vvh-5T-GZM"/>
+                                                                        <constraint firstItem="LOF-zm-2jU" firstAttribute="centerX" secondItem="x0E-2s-G0y" secondAttribute="centerX" id="wxc-8b-7y1"/>
+                                                                    </constraints>
+                                                                    <viewLayoutGuide key="contentLayoutGuide" id="rmh-Oo-iPI"/>
+                                                                    <viewLayoutGuide key="frameLayoutGuide" id="28H-JN-6T6"/>
+                                                                </scrollView>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstItem="LOF-zm-2jU" firstAttribute="top" secondItem="fdL-hK-kL8" secondAttribute="top" id="85f-xB-oe7"/>
                                                                 <constraint firstAttribute="height" constant="154" id="DLa-aI-i5K"/>
-                                                                <constraint firstAttribute="bottom" secondItem="LOF-zm-2jU" secondAttribute="bottom" id="fOP-N5-TDv"/>
-                                                                <constraint firstAttribute="trailing" secondItem="LOF-zm-2jU" secondAttribute="trailing" id="sSe-TS-rTJ"/>
-                                                                <constraint firstItem="LOF-zm-2jU" firstAttribute="leading" secondItem="fdL-hK-kL8" secondAttribute="leading" id="zyY-30-zlj"/>
+                                                                <constraint firstAttribute="trailing" secondItem="x0E-2s-G0y" secondAttribute="trailing" id="Kgi-Ry-4bM"/>
+                                                                <constraint firstAttribute="bottom" secondItem="x0E-2s-G0y" secondAttribute="bottom" id="Sn7-ba-O1s"/>
+                                                                <constraint firstItem="x0E-2s-G0y" firstAttribute="leading" secondItem="fdL-hK-kL8" secondAttribute="leading" id="T7L-LC-Dhk"/>
+                                                                <constraint firstItem="x0E-2s-G0y" firstAttribute="top" secondItem="fdL-hK-kL8" secondAttribute="top" id="WUZ-Lj-fG9"/>
                                                             </constraints>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-ik-Al0">
@@ -136,6 +149,7 @@
                                                     <outlet property="mainImage" destination="6eU-XA-90y" id="i0n-lO-Cog"/>
                                                     <outlet property="mainImageHeight" destination="2XY-UY-BoE" id="UGG-4d-BrX"/>
                                                     <outlet property="picturesStack" destination="LOF-zm-2jU" id="hpe-nJ-L65"/>
+                                                    <outlet property="scrollView" destination="x0E-2s-G0y" id="Y8S-Ro-6bc"/>
                                                     <outlet property="tinyGelleryHeigth" destination="DLa-aI-i5K" id="w9X-xS-ciV"/>
                                                     <outlet property="userEmail" destination="J3d-eA-eeK" id="rKt-C7-tpV"/>
                                                     <outlet property="userName" destination="zXM-eb-N1w" id="zfh-G7-Aga"/>
