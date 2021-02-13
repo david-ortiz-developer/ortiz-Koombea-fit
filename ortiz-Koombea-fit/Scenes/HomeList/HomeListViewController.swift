@@ -8,7 +8,7 @@
 import UIKit
 class HomeListViewController: UIViewController {
     var presenter: HomeListPresenter?
-    let reuseIdentifier = "photos_cell"
+    let reuseIdentifierOnePicture = "photos_cell"
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     var photosData: PhotosListModel? {

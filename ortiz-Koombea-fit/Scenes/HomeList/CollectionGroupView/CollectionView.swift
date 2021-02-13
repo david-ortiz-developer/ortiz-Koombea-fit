@@ -16,7 +16,7 @@ extension HomeListViewController: UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: reuseIdentifier,
+            withReuseIdentifier: reuseIdentifierOnePicture,
             for: indexPath) as? PhotosCell
         if let list = photosData?.data {
             cell?.userName.text = list[indexPath.row].name
@@ -44,21 +44,96 @@ extension HomeListViewController: UICollectionViewDataSource,
                     }
                 }
             }
+            let picturesNumber: Int = list[indexPath.row].post?.pics?.count ?? 0
+            if let viewsInSubView = cell?.picturesStack.subviews {
+            for view in viewsInSubView {
+                cell?.picturesStack.removeArrangedSubview(view)
+                view.removeFromSuperview()
+            }
+            }
+            var initialIndex = 0
+            if picturesNumber >= 2 {
+                if picturesNumber > 2 {
+                    cell?.showTinyGallerie()
+                    cell?.showMainImage()
+                    if  let urlString = list[indexPath.row].post?.pics?.first {
+                        cell?.mainImage.layer.cornerRadius = 0.0
+                        if let imgURL = URL(string: urlString) {
+                            initialIndex = 1
+                            cell?.mainImage.load.request(with: imgURL) {_, _, _ in
+                                //cell?.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+                            }
+                        }
+                    }
+                } else {
+                    cell?.hideMainImage()
+                    cell?.showTinyGallerie()
+                }
+                for indexPic in initialIndex..<picturesNumber {
+                    let img1 = UIImageView()
+                    if  let urlString = list[indexPath.row].post?.pics?[indexPic] {
+                        img1.contentMode = .scaleAspectFit
+                        img1.translatesAutoresizingMaskIntoConstraints = false
+                        img1.addConstraint(NSLayoutConstraint(item: img1, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 140))
+                        img1.addConstraint(NSLayoutConstraint(item: img1, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 140))
+                        cell?.picturesStack.addArrangedSubview(img1)
+                            if let imgURL = URL(string: urlString) {
+                                img1.load.request(with: imgURL) {_, _, _ in
+                                }
+                            }
+                    }
+                    
+                }
+                
+            }  else {
             if  let urlString = list[indexPath.row].post?.pics?.first {
+                cell?.showMainImage()
+                cell?.hideTinyGallerie()
                 cell?.mainImage.layer.cornerRadius = 0.0
                 if let imgURL = URL(string: urlString) {
+                    cell?.mainImage.addConstraint(
+                        NSLayoutConstraint(
+                            item: cell?.mainImage,
+                            attribute: .height,
+                            relatedBy: .equal,
+                            toItem: nil,
+                            attribute: .notAnAttribute,
+                            multiplier: 1, constant: 300))
+                    cell?.mainImage.addConstraint(
+                        NSLayoutConstraint(
+                            item: cell?.mainImage,
+                            attribute: .width,
+                            relatedBy: .equal,
+                            toItem: nil,
+                            attribute: .notAnAttribute,
+                            multiplier: 1,
+                            constant: 300))
                     cell?.mainImage.load.request(with: imgURL) {_, _, _ in
                         //cell?.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
                     }
                 }
             }
+                 
+        }
+            
         }
         return cell ?? UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 320, height: 320)
+        var picturesNumber = 0
+        if let list = photosData?.data {
+            picturesNumber = list[indexPath.row].post?.pics?.count ?? 0
+        }
+            
+        var returnnedSize = CGSize(width: 300, height: 340)
+        if picturesNumber == 2 {
+            returnnedSize = CGSize(width: 300, height: 190)
+        } else  if picturesNumber >= 3 {
+            returnnedSize = CGSize(width: 300, height: 490)
+        }
+        return returnnedSize
     }
     func daySuffix(from date: Date) -> String {
         let calendar = Calendar.current
