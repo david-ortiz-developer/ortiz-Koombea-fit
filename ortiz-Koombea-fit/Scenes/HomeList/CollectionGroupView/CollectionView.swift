@@ -21,14 +21,20 @@ extension HomeListViewController: UICollectionViewDataSource,
         if let list = photosData?.data {
             cell?.userName.text = list[indexPath.row].name
             cell?.userEmail.text = list[indexPath.row].email
-            cell?.dateLabel.text = list[indexPath.row].post?.date
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier:"en_US_POSIX")
             dateFormatter.dateFormat = "E MMM d yyyy hh:mm:ss 'GMT'ZZZZ (zzzz)"
             if let dateString = list[indexPath.row].post?.date {
-                let date = dateFormatter.date(from: dateString)
+                if let date = dateFormatter.date(from: dateString) {
                 print(date)
                 print(dateString)
+                let formaterOrdinal = DateFormatter()
+                formaterOrdinal.locale = Locale(identifier:"en_US_POSIX")
+                formaterOrdinal.dateFormat = "MMM d"
+                let dateInScreen = formaterOrdinal.string(from: date)
+                let dayordinal = daySuffix(from: date)
+                cell?.dateLabel.text = "\(dateInScreen)\(dayordinal)"
+                }
             }
             cell?.userName.sizeToFit()
             if  let urlString = list[indexPath.row].profilePic {
@@ -53,5 +59,15 @@ extension HomeListViewController: UICollectionViewDataSource,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 320, height: 320)
+    }
+    func daySuffix(from date: Date) -> String {
+        let calendar = Calendar.current
+        let dayOfMonth = calendar.component(.day, from: date)
+        switch dayOfMonth {
+        case 1, 21, 31: return "st"
+        case 2, 22: return "nd"
+        case 3, 23: return "rd"
+        default: return "th"
+        }
     }
 }

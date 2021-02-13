@@ -59,10 +59,10 @@
                                                                 <constraint firstAttribute="height" constant="40" id="MUL-2R-pqf"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXM-eb-N1w">
-                                                            <rect key="frame" x="53" y="252" width="166" height="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXM-eb-N1w">
+                                                            <rect key="frame" x="53" y="252" width="139" height="12"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="166" id="Hjb-bS-K9F"/>
+                                                                <constraint firstAttribute="width" constant="140" id="Hjb-bS-K9F"/>
                                                                 <constraint firstAttribute="height" constant="12" id="x4X-6W-VYk"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
@@ -71,10 +71,10 @@
                                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjQ-5n-0Cq">
-                                                            <rect key="frame" x="236" y="262" width="59" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjQ-5n-0Cq">
+                                                            <rect key="frame" x="171" y="262" width="99" height="18"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="59" id="Mmd-lI-i4k"/>
+                                                                <constraint firstAttribute="width" constant="99" id="Mmd-lI-i4k"/>
                                                                 <constraint firstAttribute="height" constant="18" id="W1h-oh-shU"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
@@ -83,10 +83,10 @@
                                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3d-eA-eeK">
-                                                            <rect key="frame" x="53" y="267" width="166" height="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3d-eA-eeK">
+                                                            <rect key="frame" x="53" y="267" width="139" height="12"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="166" id="Rpc-q7-xna"/>
+                                                                <constraint firstAttribute="width" constant="140" id="Rpc-q7-xna"/>
                                                                 <constraint firstAttribute="height" constant="12" id="h02-5l-XRe"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="9"/>
@@ -99,10 +99,10 @@
                                                     <constraints>
                                                         <constraint firstItem="zXM-eb-N1w" firstAttribute="leading" secondItem="ytP-ik-Al0" secondAttribute="trailing" constant="5" id="1L0-7O-eVv"/>
                                                         <constraint firstItem="J3d-eA-eeK" firstAttribute="leading" secondItem="ytP-ik-Al0" secondAttribute="trailing" constant="5" id="CcT-6d-ABm"/>
+                                                        <constraint firstItem="IjQ-5n-0Cq" firstAttribute="trailing" secondItem="6eU-XA-90y" secondAttribute="trailing" id="Ge7-Eb-62i"/>
                                                         <constraint firstItem="6eU-XA-90y" firstAttribute="top" secondItem="Wut-Vz-CP8" secondAttribute="top" id="IBi-4f-qUK"/>
                                                         <constraint firstItem="6eU-XA-90y" firstAttribute="width" secondItem="Wut-Vz-CP8" secondAttribute="width" multiplier="0.8" id="Nvq-XX-5cH"/>
                                                         <constraint firstItem="IjQ-5n-0Cq" firstAttribute="top" secondItem="6eU-XA-90y" secondAttribute="bottom" constant="22" id="PWx-w3-sa6"/>
-                                                        <constraint firstAttribute="trailing" secondItem="IjQ-5n-0Cq" secondAttribute="trailing" constant="5" id="QrC-0F-kpd"/>
                                                         <constraint firstAttribute="bottom" secondItem="ytP-ik-Al0" secondAttribute="bottom" constant="8" id="fcz-Gf-Tef"/>
                                                         <constraint firstItem="J3d-eA-eeK" firstAttribute="top" secondItem="zXM-eb-N1w" secondAttribute="bottom" constant="3" id="nju-4I-Fv7"/>
                                                         <constraint firstItem="6eU-XA-90y" firstAttribute="centerX" secondItem="Wut-Vz-CP8" secondAttribute="centerX" id="pPn-Ae-zq2"/>
