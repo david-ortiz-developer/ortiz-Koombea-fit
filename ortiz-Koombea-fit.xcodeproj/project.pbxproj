@@ -29,7 +29,6 @@
 		62CE0DF625D48480008061E5 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DF525D48480008061E5 /* Presenter.swift */; };
 		62CE0DFB25D48490008061E5 /* HomeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DFA25D48490008061E5 /* HomeListPresenter.swift */; };
 		62CE0E0225D48720008061E5 /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0E0125D48720008061E5 /* AppInteractor.swift */; };
-		62CE0E0B25D48E49008061E5 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0E0A25D48E49008061E5 /* Repository.swift */; };
 		62CE0E1125D49133008061E5 /* HomeListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62CE0E1025D49133008061E5 /* HomeListStoryboard.storyboard */; };
 		62CE0E1625D4AFDC008061E5 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0E1525D4AFDC008061E5 /* AppRouter.swift */; };
 		62CE0E1C25D4B01E008061E5 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0E1B25D4B01E008061E5 /* LoadingOverlay.swift */; };
@@ -84,7 +83,6 @@
 		62CE0DF525D48480008061E5 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		62CE0DFA25D48490008061E5 /* HomeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListPresenter.swift; sourceTree = "<group>"; };
 		62CE0E0125D48720008061E5 /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
-		62CE0E0A25D48E49008061E5 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		62CE0E1025D49133008061E5 /* HomeListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeListStoryboard.storyboard; sourceTree = "<group>"; };
 		62CE0E1525D4AFDC008061E5 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		62CE0E1B25D4B01E008061E5 /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
@@ -138,13 +136,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		6265527E25D78768001B9570 /* CollectionView */ = {
+		6265527E25D78768001B9570 /* CollectionGroupView */ = {
 			isa = PBXGroup;
 			children = (
 				6265528425D7887E001B9570 /* CollectionCell.swift */,
 				6265527F25D78785001B9570 /* CollectionView.swift */,
 			);
-			path = CollectionView;
+			path = CollectionGroupView;
 			sourceTree = "<group>";
 		};
 		62CE0D8B25D4762F008061E5 = {
@@ -228,7 +226,7 @@
 		62CE0DD425D47CEC008061E5 /* HomeList */ = {
 			isa = PBXGroup;
 			children = (
-				6265527E25D78768001B9570 /* CollectionView */,
+				6265527E25D78768001B9570 /* CollectionGroupView */,
 				62CE0DD525D47D13008061E5 /* HomeListConfigurator.swift */,
 				62CE0DE125D47EEA008061E5 /* HomeListViewController.swift */,
 				62CE0DE625D47F66008061E5 /* HomeListRouter.swift */,
@@ -241,7 +239,6 @@
 		62CE0DFF25D486DD008061E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				62CE0E0925D48E29008061E5 /* Entities */,
 				62CE0E0025D486E9008061E5 /* Interactor */,
 				6265526E25D752A1001B9570 /* PhotosListModel.swift */,
 			);
@@ -254,14 +251,6 @@
 				62CE0E0125D48720008061E5 /* AppInteractor.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		62CE0E0925D48E29008061E5 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				62CE0E0A25D48E49008061E5 /* Repository.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		62CE0E0F25D490DB008061E5 /* UI */ = {
@@ -556,7 +545,6 @@
 				62CE0DE225D47EEA008061E5 /* HomeListViewController.swift in Sources */,
 				62CE0DA225D4762F008061E5 /* ortiz_Koombea_fit.xcdatamodeld in Sources */,
 				62CE0D9825D4762F008061E5 /* AppDelegate.swift in Sources */,
-				62CE0E0B25D48E49008061E5 /* Repository.swift in Sources */,
 				62CE0E1625D4AFDC008061E5 /* AppRouter.swift in Sources */,
 				62CE0DE725D47F66008061E5 /* HomeListRouter.swift in Sources */,
 				6265527A25D78292001B9570 /* ViewController.swift in Sources */,

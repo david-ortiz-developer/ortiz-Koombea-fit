@@ -11,13 +11,12 @@ protocol AppInteractorProtocol {
     func fetchDataFromServer(output: @escaping (PhotosListModel?) -> Void)
 }
 class AppInteractor: AppInteractorProtocol {
-    var repository: Repository
-    init(repository: Repository) {
-        self.repository = repository
+
+    init() {
     }
 
     func fetchDataFromServer(output: @escaping (PhotosListModel?) -> Void) {
-        AF.request("https://mock.koombea.io/mt/api/posts").responseJSON{ response
+        AF.request("https://mock.koombea.io/mt/api/posts").responseJSON { response
             in
             if let responseData = response.data {
             let str = String(decoding: responseData, as: UTF8.self)

@@ -37,7 +37,7 @@ class HomeListPresenter: Presenter {
         self.router.dismissLoadingScene()
     }
     func loadImagesFromServer() {
-        interactor.fetchDataFromServer{ photosList in
+        interactor.fetchDataFromServer { photosList in
             DispatchQueue.main.async {
                 self.hideLoadingOverlay()
             }

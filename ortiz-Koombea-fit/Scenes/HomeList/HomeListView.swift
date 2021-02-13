@@ -20,7 +20,6 @@ extension HomeListViewController: HomeListView {
     func showErrorView() {
         self.errorView.isHidden = false
     }
-    
     /// Reloads the UI after data fetched or changed
     func reload() {
         print("reloading")

@@ -17,7 +17,7 @@ class HomeListConfigurator: Configurator {
            let listRouter = viewController as? HomeListRouter,
            let listView = viewController as? HomeListView {
             let presenter = HomeListPresenter(
-                interactor: AppInteractor(repository: Repository()),
+                interactor: AppInteractor(),
                 router: listRouter,
                 view: listView)
             listViewController.presenter = presenter
@@ -26,9 +26,7 @@ class HomeListConfigurator: Configurator {
     func storyboardName() -> String {
         return Constants.storyboardName
     }
-    func storyboardId() -> String {
-        return Constants.storyboardId
-    }    
+    func storyboardId() -> String {return Constants.storyboardId}    
     func isValid(viewController: UIViewController) -> Bool {
         return viewController is HomeListViewController
     }

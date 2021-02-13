@@ -13,6 +13,8 @@ class PhotosCell: UICollectionViewCell {
     @IBOutlet weak var userPicture: UIImageView!
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     var index = -1
     var clickCallBack: ((Int) -> Void)?
     @IBAction func buttonAction(_ sender: Any) {

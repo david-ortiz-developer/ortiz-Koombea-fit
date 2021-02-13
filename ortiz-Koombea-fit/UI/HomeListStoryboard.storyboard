@@ -39,34 +39,82 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photos_cell" id="fAB-8Y-1QH" customClass="PhotosCell" customModule="Tribal_Fit_Ortiz" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photos_cell" id="fAB-8Y-1QH" customClass="PhotosCell" customModule="ortiz_Koombea_fit" customModuleProvider="target">
+                                                <rect key="frame" x="45" y="0.0" width="300" height="300"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Wut-Vz-CP8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6eU-XA-90y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="86"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6eU-XA-90y">
+                                                            <rect key="frame" x="30" y="0.0" width="240" height="240"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="6eU-XA-90y" secondAttribute="height" multiplier="1:1" id="ls8-n4-psR"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-ik-Al0">
-                                                            <rect key="frame" x="0.0" y="87" width="40" height="40"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-ik-Al0">
+                                                            <rect key="frame" x="8" y="252" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="6iJ-Qw-zkl"/>
+                                                                <constraint firstAttribute="height" constant="40" id="MUL-2R-pqf"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXM-eb-N1w">
-                                                            <rect key="frame" x="42" y="115" width="86" height="12"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXM-eb-N1w">
+                                                            <rect key="frame" x="53" y="252" width="166" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="166" id="Hjb-bS-K9F"/>
+                                                                <constraint firstAttribute="height" constant="12" id="x4X-6W-VYk"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjQ-5n-0Cq">
+                                                            <rect key="frame" x="236" y="262" width="59" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="59" id="Mmd-lI-i4k"/>
+                                                                <constraint firstAttribute="height" constant="18" id="W1h-oh-shU"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3d-eA-eeK">
+                                                            <rect key="frame" x="53" y="267" width="166" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="166" id="Rpc-q7-xna"/>
+                                                                <constraint firstAttribute="height" constant="12" id="h02-5l-XRe"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="9"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                        </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="zXM-eb-N1w" firstAttribute="leading" secondItem="ytP-ik-Al0" secondAttribute="trailing" constant="5" id="1L0-7O-eVv"/>
+                                                        <constraint firstItem="J3d-eA-eeK" firstAttribute="leading" secondItem="ytP-ik-Al0" secondAttribute="trailing" constant="5" id="CcT-6d-ABm"/>
+                                                        <constraint firstItem="6eU-XA-90y" firstAttribute="top" secondItem="Wut-Vz-CP8" secondAttribute="top" id="IBi-4f-qUK"/>
+                                                        <constraint firstItem="6eU-XA-90y" firstAttribute="width" secondItem="Wut-Vz-CP8" secondAttribute="width" multiplier="0.8" id="Nvq-XX-5cH"/>
+                                                        <constraint firstItem="IjQ-5n-0Cq" firstAttribute="top" secondItem="6eU-XA-90y" secondAttribute="bottom" constant="22" id="PWx-w3-sa6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="IjQ-5n-0Cq" secondAttribute="trailing" constant="5" id="QrC-0F-kpd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ytP-ik-Al0" secondAttribute="bottom" constant="8" id="fcz-Gf-Tef"/>
+                                                        <constraint firstItem="J3d-eA-eeK" firstAttribute="top" secondItem="zXM-eb-N1w" secondAttribute="bottom" constant="3" id="nju-4I-Fv7"/>
+                                                        <constraint firstItem="6eU-XA-90y" firstAttribute="centerX" secondItem="Wut-Vz-CP8" secondAttribute="centerX" id="pPn-Ae-zq2"/>
+                                                        <constraint firstItem="ytP-ik-Al0" firstAttribute="leading" secondItem="Wut-Vz-CP8" secondAttribute="leading" constant="8" id="qOj-Gu-Drc"/>
+                                                        <constraint firstItem="zXM-eb-N1w" firstAttribute="top" secondItem="ytP-ik-Al0" secondAttribute="top" id="zin-bY-LPp"/>
+                                                    </constraints>
                                                 </collectionViewCellContentView>
+                                                <size key="customSize" width="300" height="300"/>
                                                 <connections>
+                                                    <outlet property="dateLabel" destination="IjQ-5n-0Cq" id="2sx-SZ-QVQ"/>
                                                     <outlet property="mainImage" destination="6eU-XA-90y" id="i0n-lO-Cog"/>
+                                                    <outlet property="userEmail" destination="J3d-eA-eeK" id="rKt-C7-tpV"/>
                                                     <outlet property="userName" destination="zXM-eb-N1w" id="zfh-G7-Aga"/>
                                                     <outlet property="userPicture" destination="ytP-ik-Al0" id="cOi-gJ-pub"/>
                                                 </connections>
@@ -144,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAO-Pf-sb7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="-148"/>
+            <point key="canvasLocation" x="228.98550724637684" y="-148.66071428571428"/>
         </scene>
     </scenes>
     <resources>

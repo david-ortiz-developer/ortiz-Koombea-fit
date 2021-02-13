@@ -7,17 +7,29 @@
 
 import UIKit
 import ImageLoader
-extension HomeListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension HomeListViewController: UICollectionViewDataSource,
+    UICollectionViewDelegate,
+    UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photosData?.data?.count ?? 0
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: reuseIdentifier,
             for: indexPath) as? PhotosCell
         if let list = photosData?.data {
             cell?.userName.text = list[indexPath.row].name
+            cell?.userEmail.text = list[indexPath.row].email
+            cell?.dateLabel.text = list[indexPath.row].post?.date
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier:"en_US_POSIX")
+            dateFormatter.dateFormat = "E MMM d yyyy hh:mm:ss 'GMT'ZZZZ (zzzz)"
+            if let dateString = list[indexPath.row].post?.date {
+                let date = dateFormatter.date(from: dateString)
+                print(date)
+                print(dateString)
+            }
             cell?.userName.sizeToFit()
             if  let urlString = list[indexPath.row].profilePic {
                 cell?.userPicture.layer.cornerRadius = 20.0
@@ -27,7 +39,7 @@ extension HomeListViewController: UICollectionViewDataSource, UICollectionViewDe
                 }
             }
             if  let urlString = list[indexPath.row].post?.pics?.first {
-                cell?.mainImage.layer.cornerRadius = 15.0
+                cell?.mainImage.layer.cornerRadius = 0.0
                 if let imgURL = URL(string: urlString) {
                     cell?.mainImage.load.request(with: imgURL) {_, _, _ in
                         //cell?.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
@@ -40,7 +52,6 @@ extension HomeListViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let sizes = [CGSize(width: 300, height: 200), CGSize(width: 140, height: 300), CGSize(width: 140, height: 150)]
-        return sizes.randomElement() ?? CGSize.zero
+        return CGSize(width: 320, height: 320)
     }
 }
