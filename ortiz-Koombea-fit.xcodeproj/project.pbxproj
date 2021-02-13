@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DD4D80C07465BDEF80D655C /* Pods_ortiz_Koombea_fitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EAE5780B28BF9D3136F1C7 /* Pods_ortiz_Koombea_fitTests.framework */; };
+		6265526F25D752A1001B9570 /* PhotosListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265526E25D752A1001B9570 /* PhotosListModel.swift */; };
 		62CE0D9825D4762F008061E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0D9725D4762F008061E5 /* AppDelegate.swift */; };
 		62CE0D9A25D4762F008061E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0D9925D4762F008061E5 /* SceneDelegate.swift */; };
 		62CE0D9C25D4762F008061E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0D9B25D4762F008061E5 /* ViewController.swift */; };
@@ -16,6 +18,21 @@
 		62CE0DA725D47633008061E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62CE0DA525D47633008061E5 /* LaunchScreen.storyboard */; };
 		62CE0DB225D47634008061E5 /* ortiz_Koombea_fitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DB125D47634008061E5 /* ortiz_Koombea_fitTests.swift */; };
 		62CE0DBD25D47634008061E5 /* ortiz_Koombea_fitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DBC25D47634008061E5 /* ortiz_Koombea_fitUITests.swift */; };
+		62CE0DCF25D47C63008061E5 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DCE25D47C63008061E5 /* Configurator.swift */; };
+		62CE0DD625D47D13008061E5 /* HomeListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DD525D47D13008061E5 /* HomeListConfigurator.swift */; };
+		62CE0DE225D47EEA008061E5 /* HomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DE125D47EEA008061E5 /* HomeListViewController.swift */; };
+		62CE0DE725D47F66008061E5 /* HomeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DE625D47F66008061E5 /* HomeListRouter.swift */; };
+		62CE0DEC25D4827B008061E5 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DEB25D4827B008061E5 /* ViewProtocol.swift */; };
+		62CE0DF125D482CA008061E5 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DF025D482CA008061E5 /* HomeListView.swift */; };
+		62CE0DF625D48480008061E5 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DF525D48480008061E5 /* Presenter.swift */; };
+		62CE0DFB25D48490008061E5 /* HomeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0DFA25D48490008061E5 /* HomeListPresenter.swift */; };
+		62CE0E0225D48720008061E5 /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0E0125D48720008061E5 /* AppInteractor.swift */; };
+		62CE0E0B25D48E49008061E5 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0E0A25D48E49008061E5 /* Repository.swift */; };
+		62CE0E1125D49133008061E5 /* HomeListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62CE0E1025D49133008061E5 /* HomeListStoryboard.storyboard */; };
+		62CE0E1625D4AFDC008061E5 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0E1525D4AFDC008061E5 /* AppRouter.swift */; };
+		62CE0E1C25D4B01E008061E5 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE0E1B25D4B01E008061E5 /* LoadingOverlay.swift */; };
+		BAA381B4A72344146BD91A3B /* Pods_ortiz_Koombea_fit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C249D2C47167BE7577DAB053 /* Pods_ortiz_Koombea_fit.framework */; };
+		D9321E57A04B4AC396EE21FC /* Pods_ortiz_Koombea_fit_ortiz_Koombea_fitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59957AF08EA0D4E15AF36D7C /* Pods_ortiz_Koombea_fit_ortiz_Koombea_fitUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50DA94757879EA3F003E520D /* Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.release.xcconfig"; path = "Target Support Files/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		59957AF08EA0D4E15AF36D7C /* Pods_ortiz_Koombea_fit_ortiz_Koombea_fitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ortiz_Koombea_fit_ortiz_Koombea_fitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6265526E25D752A1001B9570 /* PhotosListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListModel.swift; sourceTree = "<group>"; };
 		62CE0D9425D4762F008061E5 /* ortiz-Koombea-fit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ortiz-Koombea-fit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CE0D9725D4762F008061E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62CE0D9925D4762F008061E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +71,26 @@
 		62CE0DB825D47634008061E5 /* ortiz-Koombea-fitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ortiz-Koombea-fitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CE0DBC25D47634008061E5 /* ortiz_Koombea_fitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ortiz_Koombea_fitUITests.swift; sourceTree = "<group>"; };
 		62CE0DBE25D47634008061E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62CE0DCE25D47C63008061E5 /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		62CE0DD525D47D13008061E5 /* HomeListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListConfigurator.swift; sourceTree = "<group>"; };
+		62CE0DE125D47EEA008061E5 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
+		62CE0DE625D47F66008061E5 /* HomeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListRouter.swift; sourceTree = "<group>"; };
+		62CE0DEB25D4827B008061E5 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
+		62CE0DF025D482CA008061E5 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
+		62CE0DF525D48480008061E5 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		62CE0DFA25D48490008061E5 /* HomeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListPresenter.swift; sourceTree = "<group>"; };
+		62CE0E0125D48720008061E5 /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
+		62CE0E0A25D48E49008061E5 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		62CE0E1025D49133008061E5 /* HomeListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeListStoryboard.storyboard; sourceTree = "<group>"; };
+		62CE0E1525D4AFDC008061E5 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		62CE0E1B25D4B01E008061E5 /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		6510EF51B8FEF7713C7A4F6B /* Pods-ortiz-Koombea-fitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ortiz-Koombea-fitTests.release.xcconfig"; path = "Target Support Files/Pods-ortiz-Koombea-fitTests/Pods-ortiz-Koombea-fitTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD97C2EF9F132CE0EBD73C1D /* Pods-ortiz-Koombea-fit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ortiz-Koombea-fit.debug.xcconfig"; path = "Target Support Files/Pods-ortiz-Koombea-fit/Pods-ortiz-Koombea-fit.debug.xcconfig"; sourceTree = "<group>"; };
+		C249D2C47167BE7577DAB053 /* Pods_ortiz_Koombea_fit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ortiz_Koombea_fit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4841564B259DE473381359 /* Pods-ortiz-Koombea-fit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ortiz-Koombea-fit.release.xcconfig"; path = "Target Support Files/Pods-ortiz-Koombea-fit/Pods-ortiz-Koombea-fit.release.xcconfig"; sourceTree = "<group>"; };
+		D0EAE5780B28BF9D3136F1C7 /* Pods_ortiz_Koombea_fitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ortiz_Koombea_fitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57B3C49A3D09BE7ECEDE1EE /* Pods-ortiz-Koombea-fitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ortiz-Koombea-fitTests.debug.xcconfig"; path = "Target Support Files/Pods-ortiz-Koombea-fitTests/Pods-ortiz-Koombea-fitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAF71DFDF115F79F2D7CAA98 /* Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.debug.xcconfig"; path = "Target Support Files/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA381B4A72344146BD91A3B /* Pods_ortiz_Koombea_fit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD4D80C07465BDEF80D655C /* Pods_ortiz_Koombea_fitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +114,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9321E57A04B4AC396EE21FC /* Pods_ortiz_Koombea_fit_ortiz_Koombea_fitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5940D3F0C55B86525EC5BA6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD97C2EF9F132CE0EBD73C1D /* Pods-ortiz-Koombea-fit.debug.xcconfig */,
+				CE4841564B259DE473381359 /* Pods-ortiz-Koombea-fit.release.xcconfig */,
+				FAF71DFDF115F79F2D7CAA98 /* Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.debug.xcconfig */,
+				50DA94757879EA3F003E520D /* Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.release.xcconfig */,
+				F57B3C49A3D09BE7ECEDE1EE /* Pods-ortiz-Koombea-fitTests.debug.xcconfig */,
+				6510EF51B8FEF7713C7A4F6B /* Pods-ortiz-Koombea-fitTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		62CE0D8B25D4762F008061E5 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +141,8 @@
 				62CE0DB025D47634008061E5 /* ortiz-Koombea-fitTests */,
 				62CE0DBB25D47634008061E5 /* ortiz-Koombea-fitUITests */,
 				62CE0D9525D4762F008061E5 /* Products */,
+				5940D3F0C55B86525EC5BA6F /* Pods */,
+				ED7417D103252F807FB3D690 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +159,13 @@
 		62CE0D9625D4762F008061E5 /* ortiz-Koombea-fit */ = {
 			isa = PBXGroup;
 			children = (
+				62CE0E0F25D490DB008061E5 /* UI */,
+				62CE0DFF25D486DD008061E5 /* Model */,
+				62CE0DD325D47CDF008061E5 /* Scenes */,
+				62CE0DCD25D47C33008061E5 /* Viper */,
 				62CE0D9725D4762F008061E5 /* AppDelegate.swift */,
 				62CE0D9925D4762F008061E5 /* SceneDelegate.swift */,
 				62CE0D9B25D4762F008061E5 /* ViewController.swift */,
-				62CE0D9D25D4762F008061E5 /* Main.storyboard */,
 				62CE0DA325D47633008061E5 /* Assets.xcassets */,
 				62CE0DA525D47633008061E5 /* LaunchScreen.storyboard */,
 				62CE0DA825D47633008061E5 /* Info.plist */,
@@ -131,6 +192,91 @@
 			path = "ortiz-Koombea-fitUITests";
 			sourceTree = "<group>";
 		};
+		62CE0DCD25D47C33008061E5 /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				62CE0DF525D48480008061E5 /* Presenter.swift */,
+				62CE0DEB25D4827B008061E5 /* ViewProtocol.swift */,
+				62CE0DCE25D47C63008061E5 /* Configurator.swift */,
+				62CE0E1525D4AFDC008061E5 /* AppRouter.swift */,
+			);
+			path = Viper;
+			sourceTree = "<group>";
+		};
+		62CE0DD325D47CDF008061E5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				62CE0E1A25D4B01E008061E5 /* LoadingOverlay */,
+				62CE0DD425D47CEC008061E5 /* HomeList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		62CE0DD425D47CEC008061E5 /* HomeList */ = {
+			isa = PBXGroup;
+			children = (
+				62CE0DD525D47D13008061E5 /* HomeListConfigurator.swift */,
+				62CE0DE125D47EEA008061E5 /* HomeListViewController.swift */,
+				62CE0DE625D47F66008061E5 /* HomeListRouter.swift */,
+				62CE0DF025D482CA008061E5 /* HomeListView.swift */,
+				62CE0DFA25D48490008061E5 /* HomeListPresenter.swift */,
+			);
+			path = HomeList;
+			sourceTree = "<group>";
+		};
+		62CE0DFF25D486DD008061E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62CE0E0925D48E29008061E5 /* Entities */,
+				62CE0E0025D486E9008061E5 /* Interactor */,
+				6265526E25D752A1001B9570 /* PhotosListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		62CE0E0025D486E9008061E5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				62CE0E0125D48720008061E5 /* AppInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		62CE0E0925D48E29008061E5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				62CE0E0A25D48E49008061E5 /* Repository.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		62CE0E0F25D490DB008061E5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62CE0D9D25D4762F008061E5 /* Main.storyboard */,
+				62CE0E1025D49133008061E5 /* HomeListStoryboard.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		62CE0E1A25D4B01E008061E5 /* LoadingOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				62CE0E1B25D4B01E008061E5 /* LoadingOverlay.swift */,
+			);
+			path = LoadingOverlay;
+			sourceTree = "<group>";
+		};
+		ED7417D103252F807FB3D690 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C249D2C47167BE7577DAB053 /* Pods_ortiz_Koombea_fit.framework */,
+				59957AF08EA0D4E15AF36D7C /* Pods_ortiz_Koombea_fit_ortiz_Koombea_fitUITests.framework */,
+				D0EAE5780B28BF9D3136F1C7 /* Pods_ortiz_Koombea_fitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +284,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62CE0DC125D47634008061E5 /* Build configuration list for PBXNativeTarget "ortiz-Koombea-fit" */;
 			buildPhases = (
+				1333C920B9538E1F3A7A192A /* [CP] Check Pods Manifest.lock */,
 				62CE0D9025D4762F008061E5 /* Sources */,
 				62CE0D9125D4762F008061E5 /* Frameworks */,
 				62CE0D9225D4762F008061E5 /* Resources */,
+				62CE0DDA25D47D9D008061E5 /* ShellScript */,
+				0C2A147B52BCBFE2DDF5C7C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +304,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62CE0DC425D47634008061E5 /* Build configuration list for PBXNativeTarget "ortiz-Koombea-fitTests" */;
 			buildPhases = (
+				FBC6BF3037AE9AC30E9665E8 /* [CP] Check Pods Manifest.lock */,
 				62CE0DA925D47633008061E5 /* Sources */,
 				62CE0DAA25D47633008061E5 /* Frameworks */,
 				62CE0DAB25D47633008061E5 /* Resources */,
@@ -173,9 +323,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62CE0DC725D47634008061E5 /* Build configuration list for PBXNativeTarget "ortiz-Koombea-fitUITests" */;
 			buildPhases = (
+				D78ED84502721D6AB84888F2 /* [CP] Check Pods Manifest.lock */,
 				62CE0DB425D47634008061E5 /* Sources */,
 				62CE0DB525D47634008061E5 /* Frameworks */,
 				62CE0DB625D47634008061E5 /* Resources */,
+				1E8BC1CDABF3AD8134F0A978 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +388,7 @@
 			files = (
 				62CE0DA725D47633008061E5 /* LaunchScreen.storyboard in Resources */,
 				62CE0DA425D47633008061E5 /* Assets.xcassets in Resources */,
+				62CE0E1125D49133008061E5 /* HomeListStoryboard.storyboard in Resources */,
 				62CE0D9F25D4762F008061E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,15 +409,148 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C2A147B52BCBFE2DDF5C7C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ortiz-Koombea-fit/Pods-ortiz-Koombea-fit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ortiz-Koombea-fit/Pods-ortiz-Koombea-fit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ortiz-Koombea-fit/Pods-ortiz-Koombea-fit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1333C920B9538E1F3A7A192A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ortiz-Koombea-fit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E8BC1CDABF3AD8134F0A978 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62CE0DDA25D47D9D008061E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		D78ED84502721D6AB84888F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBC6BF3037AE9AC30E9665E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ortiz-Koombea-fitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		62CE0D9025D4762F008061E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CE0DD625D47D13008061E5 /* HomeListConfigurator.swift in Sources */,
+				62CE0DF625D48480008061E5 /* Presenter.swift in Sources */,
 				62CE0D9C25D4762F008061E5 /* ViewController.swift in Sources */,
+				62CE0DFB25D48490008061E5 /* HomeListPresenter.swift in Sources */,
+				62CE0DE225D47EEA008061E5 /* HomeListViewController.swift in Sources */,
 				62CE0DA225D4762F008061E5 /* ortiz_Koombea_fit.xcdatamodeld in Sources */,
 				62CE0D9825D4762F008061E5 /* AppDelegate.swift in Sources */,
+				62CE0E0B25D48E49008061E5 /* Repository.swift in Sources */,
+				62CE0E1625D4AFDC008061E5 /* AppRouter.swift in Sources */,
+				62CE0DE725D47F66008061E5 /* HomeListRouter.swift in Sources */,
+				62CE0E0225D48720008061E5 /* AppInteractor.swift in Sources */,
+				6265526F25D752A1001B9570 /* PhotosListModel.swift in Sources */,
+				62CE0DCF25D47C63008061E5 /* Configurator.swift in Sources */,
+				62CE0DF125D482CA008061E5 /* HomeListView.swift in Sources */,
+				62CE0DEC25D4827B008061E5 /* ViewProtocol.swift in Sources */,
 				62CE0D9A25D4762F008061E5 /* SceneDelegate.swift in Sources */,
+				62CE0E1C25D4B01E008061E5 /* LoadingOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +723,7 @@
 		};
 		62CE0DC225D47634008061E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD97C2EF9F132CE0EBD73C1D /* Pods-ortiz-Koombea-fit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,6 +743,7 @@
 		};
 		62CE0DC325D47634008061E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE4841564B259DE473381359 /* Pods-ortiz-Koombea-fit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -475,6 +763,7 @@
 		};
 		62CE0DC525D47634008061E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57B3C49A3D09BE7ECEDE1EE /* Pods-ortiz-Koombea-fitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -497,6 +786,7 @@
 		};
 		62CE0DC625D47634008061E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6510EF51B8FEF7713C7A4F6B /* Pods-ortiz-Koombea-fitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +809,7 @@
 		};
 		62CE0DC825D47634008061E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAF71DFDF115F79F2D7CAA98 /* Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +830,7 @@
 		};
 		62CE0DC925D47634008061E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50DA94757879EA3F003E520D /* Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

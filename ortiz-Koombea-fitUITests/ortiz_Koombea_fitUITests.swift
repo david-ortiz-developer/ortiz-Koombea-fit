@@ -6,7 +6,6 @@
 //
 
 import XCTest
-
 class ortiz_Koombea_fitUITests: XCTestCase {
 
     override func setUpWithError() throws {
