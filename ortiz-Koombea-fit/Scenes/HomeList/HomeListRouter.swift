@@ -17,6 +17,7 @@ extension HomeListViewController: HomeListRouter {
         AppRouter.presentLoadingScene(view: self.view)
     }
     func dismissLoadingScene() {
+        AppRouter.hideLoadingScene()
     }
     func navigateToDetailScene(id productId: String) {
     }

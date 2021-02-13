@@ -19,6 +19,7 @@ class HomeListPresenter: Presenter {
         switch status {
         case .didLoad:
             self.view.setupUI()
+            self.loadImagesFromServer()
         case .willAppear:
             break
         case .didAppear:
@@ -31,5 +32,22 @@ class HomeListPresenter: Presenter {
     }
     func showLoadingOverlay() {
         self.router.showLoadingScene()
+    }
+    func hideLoadingOverlay() {
+        self.router.dismissLoadingScene()
+    }
+    func loadImagesFromServer() {
+        interactor.fetchDataFromServer{ photosList in
+            DispatchQueue.main.async {
+                self.hideLoadingOverlay()
+            }
+            if let photosInfo = photosList {
+                self.view.photosData = photosInfo
+            } else {
+                DispatchQueue.main.async {
+                    self.view.showErrorView()
+                }
+            }
+        }
     }
 }

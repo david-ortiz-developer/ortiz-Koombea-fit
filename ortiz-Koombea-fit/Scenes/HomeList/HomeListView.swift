@@ -12,10 +12,19 @@ protocol HomeListView: ViewProtocol {
     func reload()
     func nextpage()
     func noResults()
+    var photosData: PhotosListModel? {get set}
+    func showErrorView()
+    var collectionView: UICollectionView! { get }
 }
 extension HomeListViewController: HomeListView {
+    func showErrorView() {
+        self.errorView.isHidden = false
+    }
+    
     /// Reloads the UI after data fetched or changed
     func reload() {
+        print("reloading")
+        self.collectionView.reloadData()
     }
     /// Tjhis method is called after the scrolling reach the end of the page
     func nextpage() {
@@ -25,5 +34,7 @@ extension HomeListViewController: HomeListView {
     }
     func setupUI() {
         showLoadingScene()
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
 }

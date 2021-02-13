@@ -10,4 +10,7 @@ class AppRouter {
     class func presentLoadingScene(view: UIView) {
            LoadingOverlay.shared.showOverlay(view: view)
        }
+    class func hideLoadingScene() {
+        LoadingOverlay.shared.hideOverlayView()
+    }
 }
