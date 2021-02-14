@@ -25,13 +25,13 @@ extension HomeListViewController: UICollectionViewDataSource,
             var initialIndex = 0
             if picturesNumber >= 2 {
                 if picturesNumber > 2 {
-                    cell?.showMainImage()
-                    cell?.showTinyGallerie()
+                    cellView.showMainImage()
+                    cellView.showTinyGallerie()
                     if  let urlString = list[indexPath.row].post?.pics?[0] {
-                        cell?.mainImage.layer.cornerRadius = 0.0
+                        cellView.mainImage.layer.cornerRadius = 0.0
                         if let imgURL = URL(string: urlString) {
                             initialIndex = 1
-                            cell?.mainImage.load.request(with: imgURL) {_, error, _ in
+                            cellView.mainImage.load.request(with: imgURL) {_, error, _ in
                                 if error != nil {
                                     print("error \(error)")
                                 }
@@ -39,8 +39,11 @@ extension HomeListViewController: UICollectionViewDataSource,
                         }
                     }
                 } else {
-                    cell?.hideMainImage()
-                    cell?.showTinyGallerie()
+                    cellView.hideMainImage()
+                    cellView.showTinyGallerie()
+                }
+                if picturesNumber > 5 {
+                    print("the list \(list[indexPath.row])")
                 }
                 var contentWidth = 0
                 for indexPic in initialIndex..<picturesNumber {
@@ -48,30 +51,40 @@ extension HomeListViewController: UICollectionViewDataSource,
                     if  let urlString = list[indexPath.row].post?.pics?[indexPic] {
                         img1.contentMode = .scaleAspectFit
                         img1.translatesAutoresizingMaskIntoConstraints = false
-                        img1.addConstraint(NSLayoutConstraint(item: img1, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 140))
-                        img1.addConstraint(NSLayoutConstraint(item: img1, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 140))
-                        cell?.picturesStack.addArrangedSubview(img1)
+                        img1.image = UIImage(named: "placeholderImge")
+                        img1.addConstraint(NSLayoutConstraint(
+                                            item: img1,
+                                            attribute: .height,
+                                            relatedBy: .equal,
+                                            toItem: nil,
+                                            attribute: .notAnAttribute,
+                                            multiplier: 1,
+                                            constant: 140))
+                        img1.addConstraint(NSLayoutConstraint(
+                                            item: img1,
+                                            attribute: .width,
+                                            relatedBy: .equal,
+                                            toItem: nil,
+                                            attribute: .notAnAttribute,
+                                            multiplier: 1,
+                                            constant: 140))
+                        cellView.picturesStack.addArrangedSubview(img1)
+                        contentWidth += 150
                         if let imgURL = URL(string: urlString) {
-                            img1.load.request(with: imgURL) {_, error, _ in
-                                if error != nil {
-                                    print("errorxxxxx \(error)")
-                                }
-                            }
+                            img1.load.request(with: imgURL)
                         }
                     }
-                    
                 }
-                contentWidth = 160 * ((picturesNumber <= 3) ? 0 : (picturesNumber-1))
-                cell?.picturesStack.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 140)
-                cell?.scrollView.contentSize = CGSize(width: contentWidth, height: 155)
+                cellView.picturesStack.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 155)
+                cellView.scrollView.contentSize = CGSize(width: contentWidth, height: 155)
             }  else {
                 if  let urlString = list[indexPath.row].post?.pics?.first {
-                    cell?.showMainImage()
-                    cell?.hideTinyGallerie()
-                    cell?.mainImage.layer.cornerRadius = 0.0
+                    cellView.showMainImage()
+                    cellView.hideTinyGallerie()
+                    cellView.mainImage.layer.cornerRadius = 0.0
                     if let imgURL = URL(string: urlString) {
                         if let cellViewImg = cell?.mainImage {
-                        cell?.mainImage.addConstraint(
+                            cellViewImg.addConstraint(
                             NSLayoutConstraint(
                                 item: cellViewImg,
                                 attribute: .height,
@@ -79,7 +92,7 @@ extension HomeListViewController: UICollectionViewDataSource,
                                 toItem: nil,
                                 attribute: .notAnAttribute,
                                 multiplier: 1, constant: 300))
-                        cell?.mainImage.addConstraint(
+                            cellViewImg.addConstraint(
                             NSLayoutConstraint(
                                 item: cellViewImg,
                                 attribute: .width,
@@ -88,11 +101,7 @@ extension HomeListViewController: UICollectionViewDataSource,
                                 attribute: .notAnAttribute,
                                 multiplier: 1,
                                 constant: 300))
-                        cell?.mainImage.load.request(with: imgURL) {_, error, _ in
-                            if error != nil {
-                                print("error \(error)")
-                            }
-                        }
+                            cellViewImg.load.request(with: imgURL)
                     }
                     }
                 }
