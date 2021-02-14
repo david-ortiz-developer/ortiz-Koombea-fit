@@ -20,6 +20,9 @@ class HomeListPresenter: Presenter {
         case .didLoad:
             self.view.setupUI()
             self.loadImagesFromServer()
+            interactor.retrievePicturesCache(predicate:nil) {_ in
+                
+            }
         case .willAppear:
             break
         case .didAppear:
