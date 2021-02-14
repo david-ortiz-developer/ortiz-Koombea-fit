@@ -10,8 +10,9 @@ import Alamofire
 import CoreData
 protocol AppInteractorProtocol {
     func fetchDataFromServer(output: @escaping (PhotosListModel?) -> Void)
-    func retrievePicturesCache(predicate: NSPredicate?, output: @escaping ([Datum]) -> Void)
+    func retrievePicturesCache(predicate: NSPredicate?, output: @escaping (PhotosListModel) -> Void)
 }
+/// Class for interacting with the data
 class AppInteractor: AppInteractorProtocol {
 
     init() {
@@ -21,7 +22,9 @@ class AppInteractor: AppInteractorProtocol {
             return appDelegate
         }
         return AppDelegate()
-    }
+     }
+    /// This method creates a Core Data  entity for each Datum object and then saves it on the context
+    /// - Parameter data: Datum objects array decoded from de JSON
     func saveImagesData(data: [Datum]) {
         let managedContext = getDelergate().persistentContainer.viewContext
         for datum in data {
@@ -37,18 +40,6 @@ class AppInteractor: AppInteractorProtocol {
             pictureObject.setValue(datum.post?.id, forKey: "postId")
             pictureObject.setValue(datum.post?.date, forKey: "postDate")
             pictureObject.setValue(datum.post?.pics, forKey: "postPics")
-            
-            
-            /*
-            let postCore =
-            NSEntityDescription.entity(forEntityName: "PostCore",
-                                       in: managedContext)!
-            postCore.setValue(datum.post?.id, forKey: "id")
-            postCore.setValue(datum.post?.date, forKey: "date")
-            postCore.setValue(datum.post?.pics, forKey: "pics")
-            
-            //pictureObject.setValue(postCore, forKey: "post")
- */
             do {
                 try managedContext.save()
 
@@ -58,7 +49,11 @@ class AppInteractor: AppInteractorProtocol {
             }
         }
     }
-    func retrievePicturesCache(predicate: NSPredicate? = nil, output: @escaping ([Datum]) -> Void) {
+    /// This method return a Datum objects array if there is one saved previously on Core Data
+    /// - Parameters:
+    ///   - predicate: can be nil, the predicate for querying the database
+    ///   - output: escaped closure with the Async response
+    func retrievePicturesCache(predicate: NSPredicate? = nil, output: @escaping (PhotosListModel) -> Void) {
         var picturesArray = [Datum]()
         let appDelegate = getDelergate()
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -78,20 +73,20 @@ class AppInteractor: AppInteractorProtocol {
                     let email = mocapPoint.value(forKey: "email")as? String,
                     let profilePic = mocapPoint.value(forKey: "profile_pic") as? String,
                     let postId = mocapPoint.value(forKey: "postId") as? Int,
-                    let postDate = mocapPoint.value(forKey: "postDate") as? String
-                    {
+                    let postDate = mocapPoint.value(forKey: "postDate") as? String {
                     let post = Post(id: postId, date: postDate, pics: pictures)
-                    
                     let datum = Datum(uid: uid, name: name, email: email, profilePic: profilePic, post: post)
                     picturesArray.append(datum)
                 }
             }
-            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        output(picturesArray)
+        var model = PhotosListModel(data: picturesArray)
+        output(model)
     }
+    /// This method connects to the back end
+    /// - Parameter output: escaped closure with the model object after codification
     func fetchDataFromServer(output: @escaping (PhotosListModel?) -> Void) {
         AF.request("https://mock.koombea.io/mt/api/posts").responseJSON { response
             in
@@ -106,6 +101,9 @@ class AppInteractor: AppInteractorProtocol {
             }
         }
     }
+    /// This method decodes the JSON to model object PhotosListModel
+    /// - Parameter jsonData: the Json Data for encode
+    /// - Returns: The model object
     func decodePhotosResult(jsonData: Data) -> PhotosListModel? {
         var searchResult: PhotosListModel
         do {

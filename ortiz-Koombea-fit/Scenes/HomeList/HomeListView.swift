@@ -35,5 +35,13 @@ extension HomeListViewController: HomeListView {
         showLoadingScene()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading Data")
+           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        self.collectionView.addSubview(refreshControl)
+    }
+    @objc func refresh(_ sender: AnyObject) {
+       // Code to refresh table view
+        print("refreshing...")
+        refreshControl.endRefreshing()
     }
 }

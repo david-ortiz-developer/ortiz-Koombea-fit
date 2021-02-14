@@ -19,10 +19,7 @@ class HomeListPresenter: Presenter {
         switch status {
         case .didLoad:
             self.view.setupUI()
-            self.loadImagesFromServer()
-            interactor.retrievePicturesCache(predicate:nil) {_ in
-                
-            }
+            self.retrieveImages()
         case .willAppear:
             break
         case .didAppear:
@@ -33,12 +30,25 @@ class HomeListPresenter: Presenter {
             break
         }
     }
+    func retrieveImages() {
+        if Connectivity.isConnectedToInternet() {
+            self.loadImagesFromServer()
+        } else {
+            interactor.retrievePicturesCache(predicate: nil) { photosInfo in
+                self.view.photosData = photosInfo
+                self.hideLoadingOverlay()
+            }
+        }
+    }
     func showLoadingOverlay() {
         self.router.showLoadingScene()
     }
     func hideLoadingOverlay() {
         self.router.dismissLoadingScene()
     }
+    /// This method loads the images form server,
+    /// if there is a problem the method will return
+    /// the data saved in the device
     func loadImagesFromServer() {
         interactor.fetchDataFromServer { photosList in
             DispatchQueue.main.async {

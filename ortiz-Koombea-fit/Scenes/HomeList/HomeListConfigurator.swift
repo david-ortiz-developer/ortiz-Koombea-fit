@@ -6,6 +6,7 @@
 //
 
 import UIKit
+/// This class prepare the viewcontroller for Viper pattern
 class HomeListConfigurator: Configurator {
     static let shared = HomeListConfigurator()
     fileprivate struct Constants {
@@ -26,7 +27,7 @@ class HomeListConfigurator: Configurator {
     func storyboardName() -> String {
         return Constants.storyboardName
     }
-    func storyboardId() -> String {return Constants.storyboardId}    
+    func storyboardId() -> String {return Constants.storyboardId}
     func isValid(viewController: UIViewController) -> Bool {
         return viewController is HomeListViewController
     }
