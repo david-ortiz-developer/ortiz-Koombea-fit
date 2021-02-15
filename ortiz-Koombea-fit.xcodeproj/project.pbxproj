@@ -316,7 +316,6 @@
 				62CE0D9025D4762F008061E5 /* Sources */,
 				62CE0D9125D4762F008061E5 /* Frameworks */,
 				62CE0D9225D4762F008061E5 /* Resources */,
-				62CE0DDA25D47D9D008061E5 /* ShellScript */,
 				0C2A147B52BCBFE2DDF5C7C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -493,23 +492,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests/Pods-ortiz-Koombea-fit-ortiz-Koombea-fitUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		62CE0DDA25D47D9D008061E5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		D78ED84502721D6AB84888F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
