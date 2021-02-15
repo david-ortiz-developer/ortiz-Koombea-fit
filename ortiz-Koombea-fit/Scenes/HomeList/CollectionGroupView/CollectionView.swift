@@ -50,8 +50,9 @@ extension HomeListViewController: UICollectionViewDataSource,
             cellView.hideTinyGallerie()
             cellView.mainImage.layer.cornerRadius = 0.0
             if let imgURL = URL(string: urlString) {
-                cellView.clickCallBack = showDetail
-                cellView.imageURL = imgURL
+                cellView.mainImageButton.picURL = imgURL
+                cellView.mainImageButton.addTarget(self, action: #selector(handleTap(sender:)), for: .touchUpInside)
+                cellView.mainImageButton.picURL = imgURL
                 if let cellViewImg = cellView.mainImage {
                     cellViewImg.addConstraint(
                         NSLayoutConstraint(
@@ -82,8 +83,9 @@ extension HomeListViewController: UICollectionViewDataSource,
             if let imgURL = URL(string: urlString) {
                 initialIndex = 1
                 cellView.mainImage.load.request(with: imgURL)
-                cellView.clickCallBack = showDetail
-                cellView.imageURL = imgURL
+                //cellView.clickCallBack = showDetail
+                cellView.mainImageButton.addTarget(self, action: #selector(handleTap(sender:)), for: .touchUpInside)
+                cellView.mainImageButton.picURL = imgURL
             }
         }
         return initialIndex
@@ -143,9 +145,8 @@ extension HomeListViewController: UICollectionViewDataSource,
                            constant: 140).isActive = true
     }
     @objc func handleTap(sender: GalleryItemButton) {
-      // Doing stuff with model object here
         if let url = sender.picURL {
-            showDetail(url: url)
+            presenter?.showDetailView(url: url)
         }
     }
     func setAuthorData(cell: PhotosCell, list: [Datum], indexPath: IndexPath) {
@@ -181,7 +182,6 @@ extension HomeListViewController: UICollectionViewDataSource,
         if let list = photosData?.data {
             picturesNumber = list[indexPath.row].post?.pics?.count ?? 0
         }
-        
         var returnnedSize = CGSize(width: 300, height: 340)
         if picturesNumber == 2 {
             returnnedSize = CGSize(width: 300, height: 190)
@@ -199,15 +199,5 @@ extension HomeListViewController: UICollectionViewDataSource,
         case 3, 23: return "rd"
         default: return "th"
         }
-    }
-}
-class GalleryItemButton : UIButton {
-
-    var picURL : URL? = nil
-    var customObject2 : Any? = nil
-
-    convenience init(name: String, object: URL) {
-        self.init()
-        self.picURL = object
     }
 }

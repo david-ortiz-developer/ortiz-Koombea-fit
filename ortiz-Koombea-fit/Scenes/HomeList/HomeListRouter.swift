@@ -9,8 +9,9 @@ import Foundation
 protocol HomeListRouter {
     func showLoadingScene()
     func dismissLoadingScene()
-    func navigateToDetailScene(id productId: String)
+    func navigateToDetailScene(url: URL)
     func navigateToErrorScene(error: NSError)
+    func showPictureDetail(url: URL)
 }
 extension HomeListViewController: HomeListRouter {
     func showLoadingScene() {
@@ -19,8 +20,14 @@ extension HomeListViewController: HomeListRouter {
     func dismissLoadingScene() {
         AppRouter.hideLoadingScene()
     }
-    func navigateToDetailScene(id productId: String) {
+    func navigateToDetailScene(url: URL) {
     }
     func navigateToErrorScene(error: NSError) {
+    }
+    /// This method opens the detail view for the picture
+    /// - Parameter url: the url of the image
+    func showPictureDetail(url: URL) {
+        touchedImageURL = url
+        self.performSegue(withIdentifier: "detailSegue", sender: self)
     }
 }

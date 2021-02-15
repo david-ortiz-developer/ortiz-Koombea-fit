@@ -83,7 +83,7 @@ class AppInteractor: AppInteractorProtocol {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        var model = PhotosListModel(data: picturesArray)
+        let model = PhotosListModel(data: picturesArray)
         output(model)
     }
     /// This method connects to the back end

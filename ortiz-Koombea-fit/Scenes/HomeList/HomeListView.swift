@@ -40,16 +40,10 @@ extension HomeListViewController: HomeListView {
         self.collectionView.addSubview(refreshControl)
     }
     @objc func refresh(_ sender: AnyObject) {
-       // Code to refresh table view
-        print("refreshing...")
         presenter?.reloadAfterPull {[self] _ in
             self.refreshControl.endRefreshing()
             self.collectionView.reloadData()
         }
-    }
-    func showDetail(url: URL) {
-        touchedImageURL = url
-        self.performSegue(withIdentifier: "detailSegue", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detail = segue.destination as? DetailView {

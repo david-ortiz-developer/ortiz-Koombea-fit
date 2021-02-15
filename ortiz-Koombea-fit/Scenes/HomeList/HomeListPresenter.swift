@@ -73,4 +73,7 @@ class HomeListPresenter: Presenter {
             }
         }
     }
+    func showDetailView(url: URL) {
+        router.showPictureDetail(url: url)
+    }
 }

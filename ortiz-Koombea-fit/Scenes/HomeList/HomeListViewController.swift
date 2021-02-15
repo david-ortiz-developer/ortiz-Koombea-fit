@@ -8,7 +8,7 @@
 import UIKit
 class HomeListViewController: UIViewController {
     var presenter: HomeListPresenter?
-    let reuseIdentifierOnePicture = "photos_cell"
+    let reuseIdentifierOnePicture = Constants.galleryCellIdentifier
     var refreshControl = UIRefreshControl()
     var touchedImageURL: URL?
     @IBOutlet weak var errorView: UIView!

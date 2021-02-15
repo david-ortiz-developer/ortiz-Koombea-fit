@@ -14,7 +14,5 @@ struct Constants {
     static let shortDateFormat = "MMM d"
     static let cornerRadiusProfilePic = CGFloat(20.0)
     static let bigImageSize = CGFloat(300)
-    enum UnsplashApp {
-        static let accesKey = "dS7Ef4BLWNhvVT107oYfoxaEnfWOo1JkD1_3rLgPCQM"
-    }
+    static let galleryCellIdentifier = "photos_cell"
 }

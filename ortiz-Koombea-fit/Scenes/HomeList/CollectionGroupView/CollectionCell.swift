@@ -15,16 +15,11 @@ class PhotosCell: UICollectionViewCell {
     @IBOutlet weak var picturesStack: UIStackView!
     @IBOutlet weak var mainImageHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mainImageButton: GalleryItemButton!
     var index = -1
     var clickCallBack: ((URL) -> Void)?
-    var imageURL: URL?
     @IBOutlet weak var tinyGelleryHeigth: NSLayoutConstraint!
-    @IBAction func buttonAction(_ sender: Any) {
-        if let touchAction = clickCallBack,
-           let url = imageURL {
-            touchAction(url)
-        }
-    }
+
     func hideMainImage() {
         self.mainImageHeight.constant = 0
     }
