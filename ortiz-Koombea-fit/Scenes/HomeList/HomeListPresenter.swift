@@ -19,7 +19,7 @@ class HomeListPresenter: Presenter {
         switch status {
         case .didLoad:
             self.view.setupUI()
-            self.retrieveImages()
+            self.retrieveImages{_ in}
         case .willAppear:
             break
         case .didAppear:
@@ -30,13 +30,15 @@ class HomeListPresenter: Presenter {
             break
         }
     }
-    func retrieveImages() {
+    func retrieveImages(output: @escaping(Bool) -> Void) {
         if Connectivity.isConnectedToInternet() {
             self.loadImagesFromServer()
+            output(false)
         } else {
             interactor.retrievePicturesCache(predicate: nil) { photosInfo in
                 self.view.photosData = photosInfo
                 self.hideLoadingOverlay()
+                output(true)
             }
         }
     }
@@ -60,6 +62,14 @@ class HomeListPresenter: Presenter {
                 DispatchQueue.main.async {
                     self.view.showErrorView()
                 }
+            }
+        }
+    }
+    func reloadAfterPull(output: @escaping (Bool) -> Void) {
+        interactor.flushLocalData(entityName: "DatumCore") {result in
+            self.view.photosData = nil
+            self.retrieveImages {result in
+                output(result)
             }
         }
     }

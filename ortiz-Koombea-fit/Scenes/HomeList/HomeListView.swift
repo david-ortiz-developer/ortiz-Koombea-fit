@@ -42,6 +42,9 @@ extension HomeListViewController: HomeListView {
     @objc func refresh(_ sender: AnyObject) {
        // Code to refresh table view
         print("refreshing...")
-        refreshControl.endRefreshing()
+        presenter?.reloadAfterPull {[self] _ in
+            self.refreshControl.endRefreshing()
+            self.collectionView.reloadData()
+        }
     }
 }

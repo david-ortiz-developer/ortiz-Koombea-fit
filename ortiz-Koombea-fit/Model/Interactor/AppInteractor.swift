@@ -11,6 +11,7 @@ import CoreData
 protocol AppInteractorProtocol {
     func fetchDataFromServer(output: @escaping (PhotosListModel?) -> Void)
     func retrievePicturesCache(predicate: NSPredicate?, output: @escaping (PhotosListModel) -> Void)
+    func flushLocalData(entityName: String, output: @escaping (Bool) -> Void)
 }
 /// Class for interacting with the data
 class AppInteractor: AppInteractorProtocol {
@@ -112,6 +113,22 @@ class AppInteractor: AppInteractorProtocol {
         } catch {
             print(error)
             return nil
+        }
+    }
+    func flushLocalData(entityName: String, output: @escaping (Bool) -> Void){
+        let appDelegate = getDelergate()
+        let container = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        
+        // Create Batch Delete Request
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try container.execute(batchDeleteRequest)
+            output(true)
+        } catch {
+            // Error Handling
+            output(false)
         }
     }
 }
