@@ -8,10 +8,7 @@
 import UIKit
 class PhotosCell: UICollectionViewCell {
     @IBOutlet weak var mainImage: UIImageView!
-    @IBOutlet weak var removeFavoriteButton: UIButton!
-    @IBOutlet weak var addFavoriteButton: UIButton!
     @IBOutlet weak var userPicture: UIImageView!
-    @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -19,11 +16,13 @@ class PhotosCell: UICollectionViewCell {
     @IBOutlet weak var mainImageHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     var index = -1
-    var clickCallBack: ((Int) -> Void)?
+    var clickCallBack: ((URL) -> Void)?
+    var imageURL: URL?
     @IBOutlet weak var tinyGelleryHeigth: NSLayoutConstraint!
     @IBAction func buttonAction(_ sender: Any) {
-        if let touchAction = clickCallBack {
-            touchAction(index)
+        if let touchAction = clickCallBack,
+           let url = imageURL {
+            touchAction(url)
         }
     }
     func hideMainImage() {

@@ -10,6 +10,7 @@ class HomeListViewController: UIViewController {
     var presenter: HomeListPresenter?
     let reuseIdentifierOnePicture = "photos_cell"
     var refreshControl = UIRefreshControl()
+    var touchedImageURL: URL?
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     var photosData: PhotosListModel? {

@@ -19,7 +19,7 @@ class HomeListPresenter: Presenter {
         switch status {
         case .didLoad:
             self.view.setupUI()
-            self.retrieveImages{_ in}
+            self.retrieveImages {_ in}
         case .willAppear:
             break
         case .didAppear:

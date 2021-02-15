@@ -115,14 +115,15 @@ class AppInteractor: AppInteractorProtocol {
             return nil
         }
     }
-    func flushLocalData(entityName: String, output: @escaping (Bool) -> Void){
+    /// Clears the Core Data database deleting all its contents
+    /// - Parameters:
+    ///   - entityName: The entity we want to flush
+    ///   - output: escaped closure with the resulting flag
+    func flushLocalData(entityName: String, output: @escaping (Bool) -> Void) {
         let appDelegate = getDelergate()
         let container = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        
-        // Create Batch Delete Request
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
         do {
             try container.execute(batchDeleteRequest)
             output(true)

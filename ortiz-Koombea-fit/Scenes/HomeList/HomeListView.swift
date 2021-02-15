@@ -47,4 +47,13 @@ extension HomeListViewController: HomeListView {
             self.collectionView.reloadData()
         }
     }
+    func showDetail(url: URL) {
+        touchedImageURL = url
+        self.performSegue(withIdentifier: "detailSegue", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detail = segue.destination as? DetailView {
+            detail.detailURL = touchedImageURL
+        }
+    }
 }

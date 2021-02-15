@@ -50,6 +50,8 @@ extension HomeListViewController: UICollectionViewDataSource,
             cellView.hideTinyGallerie()
             cellView.mainImage.layer.cornerRadius = 0.0
             if let imgURL = URL(string: urlString) {
+                cellView.clickCallBack = showDetail
+                cellView.imageURL = imgURL
                 if let cellViewImg = cellView.mainImage {
                     cellViewImg.addConstraint(
                         NSLayoutConstraint(
@@ -79,11 +81,9 @@ extension HomeListViewController: UICollectionViewDataSource,
             cellView.mainImage.layer.cornerRadius = 0.0
             if let imgURL = URL(string: urlString) {
                 initialIndex = 1
-                cellView.mainImage.load.request(with: imgURL) {_, error, _ in
-                    if error != nil {
-                        print("error \(error.debugDescription)")
-                    }
-                }
+                cellView.mainImage.load.request(with: imgURL)
+                cellView.clickCallBack = showDetail
+                cellView.imageURL = imgURL
             }
         }
         return initialIndex
@@ -94,51 +94,73 @@ extension HomeListViewController: UICollectionViewDataSource,
                          indexPath: IndexPath,
                          cellView: PhotosCell) {
         var contentWidth: CGFloat = 0
+        cellView.picturesStack.translatesAutoresizingMaskIntoConstraints = false
         for indexPic in initialIndex..<picturesNumber {
-            let img1 = UIImageView()
             if  let urlString = list[indexPath.row].post?.pics?[indexPic] {
-                img1.contentMode = .scaleAspectFit
-                img1.translatesAutoresizingMaskIntoConstraints = false
-                img1.image = UIImage(named: "placeholderImge")
-                img1.addConstraint(NSLayoutConstraint(
-                                    item: img1,
-                                    attribute: .height,
-                                    relatedBy: .equal,
-                                    toItem: nil,
-                                    attribute: .notAnAttribute,
-                                    multiplier: 1,
-                                    constant: 140))
-                img1.addConstraint(NSLayoutConstraint(
-                                    item: img1,
-                                    attribute: .width,
-                                    relatedBy: .equal,
-                                    toItem: nil,
-                                    attribute: .notAnAttribute,
-                                    multiplier: 1,
-                                    constant: 140))
-                cellView.picturesStack.addArrangedSubview(img1)
-                contentWidth += 150
-                if let imgURL = URL(string: urlString) {
-                    img1.load.request(with: imgURL)
+            if let imgURL = URL(string: urlString) {
+            let galleryImage = UIImageView()
+            galleryImage.contentMode = .scaleAspectFill
+            galleryImage.image = UIImage(named: Constants.placeholderImageName)
+                let galeryItemView = UIView()
+                let itemButton = GalleryItemButton()
+                galeryItemView.addSubview(galleryImage)
+                galeryItemView.addSubview(itemButton)
+                itemButton.addTarget(self, action: #selector(handleTap(sender:)), for: .touchUpInside)
+                itemButton.picURL = imgURL
+                cellView.scrollView.addSubview(galeryItemView)
+                setSizeConstraintForItem(item: galleryImage)
+                setSizeConstraintForItem(item: itemButton)
+                setSizeConstraintForItem(item: galeryItemView)
+                setleadinConstraintForItem(item: galleryImage, cellView: cellView, contentWidth: contentWidth)
+                setleadinConstraintForItem(item: itemButton, cellView: cellView, contentWidth: contentWidth)
+                setleadinConstraintForItem(item: galeryItemView, cellView: cellView, contentWidth: contentWidth)
+                    galleryImage.load.request(with: imgURL)
                 }
+                contentWidth += Constants.galleryScrollContentWidth
             }
         }
-        cellView.picturesStack.frame = CGRect(x: 0, y: 0, width: contentWidth, height: 155)
-        cellView.scrollView.contentSize = CGSize(width: contentWidth, height: 155)
+        cellView.scrollView.contentSize = CGSize(width: contentWidth, height: 130)
+    }
+    func setleadinConstraintForItem(item: UIView, cellView: PhotosCell, contentWidth: CGFloat) {
+        let margins = cellView.picturesStack.layoutMarginsGuide
+        item.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: CGFloat(contentWidth)).isActive = true
+        item.translatesAutoresizingMaskIntoConstraints = false
+    }
+    func setSizeConstraintForItem(item: UIView) {
+        NSLayoutConstraint(item: item,
+                           attribute: NSLayoutConstraint.Attribute.width,
+                           relatedBy: NSLayoutConstraint.Relation.equal,
+                           toItem: nil,
+                           attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                           multiplier: 1,
+                           constant: 140).isActive = true
+        NSLayoutConstraint(item: item,
+                           attribute: NSLayoutConstraint.Attribute.height,
+                           relatedBy: NSLayoutConstraint.Relation.equal,
+                           toItem: nil,
+                           attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                           multiplier: 1,
+                           constant: 140).isActive = true
+    }
+    @objc func handleTap(sender: GalleryItemButton) {
+      // Doing stuff with model object here
+        if let url = sender.picURL {
+            showDetail(url: url)
+        }
     }
     func setAuthorData(cell: PhotosCell, list: [Datum], indexPath: IndexPath) {
         cell.userName.text = list[indexPath.row].name
         cell.userEmail.text = list[indexPath.row].email
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "E MMM d yyyy hh:mm:ss 'GMT'ZZZZ (zzzz)"
+        dateFormatter.locale = Locale(identifier: Constants.postFixlocale)
+        dateFormatter.dateFormat = Constants.dateFormatterString
         if let dateString = list[indexPath.row].post?.date {
             if let date = dateFormatter.date(from: dateString) {
                 print(date)
                 print(dateString)
                 let formaterOrdinal = DateFormatter()
-                formaterOrdinal.locale = Locale(identifier: "en_US_POSIX")
-                formaterOrdinal.dateFormat = "MMM d"
+                formaterOrdinal.locale = Locale(identifier: Constants.postFixlocale)
+                formaterOrdinal.dateFormat = Constants.dateFormatterString
                 let dateInScreen = formaterOrdinal.string(from: date)
                 let dayordinal = daySuffix(from: date)
                 cell.dateLabel.text = "\(dateInScreen)\(dayordinal)"
@@ -146,7 +168,7 @@ extension HomeListViewController: UICollectionViewDataSource,
         }
         cell.userName.sizeToFit()
         if  let urlString = list[indexPath.row].profilePic {
-            cell.userPicture.layer.cornerRadius = 20.0
+            cell.userPicture.layer.cornerRadius = Constants.cornerRadiusProfilePic
             if let imgURL = URL(string: urlString) {
                 cell.userPicture.load.request(with: imgURL)
             }
@@ -159,6 +181,7 @@ extension HomeListViewController: UICollectionViewDataSource,
         if let list = photosData?.data {
             picturesNumber = list[indexPath.row].post?.pics?.count ?? 0
         }
+        
         var returnnedSize = CGSize(width: 300, height: 340)
         if picturesNumber == 2 {
             returnnedSize = CGSize(width: 300, height: 190)
@@ -176,5 +199,15 @@ extension HomeListViewController: UICollectionViewDataSource,
         case 3, 23: return "rd"
         default: return "th"
         }
+    }
+}
+class GalleryItemButton : UIButton {
+
+    var picURL : URL? = nil
+    var customObject2 : Any? = nil
+
+    convenience init(name: String, object: URL) {
+        self.init()
+        self.picURL = object
     }
 }
